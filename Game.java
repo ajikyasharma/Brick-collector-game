@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 
-class Game  extends KeyAdapter  implements MouseMotionListener
+class Game  extends KeyAdapter  implements MouseMotionListener, WindowListener
 {
     static Frame f;
     static  Button  brick, catcher;
@@ -36,6 +36,7 @@ class Game  extends KeyAdapter  implements MouseMotionListener
         f.setBackground(new Color(186,200,207));
         f.setResizable(false);
         f.setVisible(true);
+        f.addWindowListener(this);
          BrickThread b1= new BrickThread();
           b1.start();
 
@@ -92,5 +93,35 @@ class Game  extends KeyAdapter  implements MouseMotionListener
 
          catcher.setBounds(dis, 540,120,10);
       }
+    public void windowActivated(WindowEvent e)
+    {
+
+    }
+
+    public void windowClosed(WindowEvent e)
+    {
+
+    }
+    public void windowClosing(WindowEvent e)
+    {
+       f.dispose();
+    }
+    public void windowDeactivated(WindowEvent e)
+    {
+
+    }
+    public void windowDeiconified(WindowEvent e)
+    {
+
+    }
+    public void windowIconified(WindowEvent e)
+    {
+
+    }
+    public void windowOpened(WindowEvent e)
+    {
+
+    }
+
 
 }
